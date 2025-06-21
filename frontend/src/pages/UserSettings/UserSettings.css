@@ -1,0 +1,61 @@
+.user-settings {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+  margin: 100px auto;
+  max-width: 400px;
+}
+
+.user-settings h2 {
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+}
+
+.user-settings form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.user-settings label {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.user-settings input[type="text"],
+.user-settings input[type="password"] {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.user-settings input[type="text"]:focus,
+.user-settings input[type="password"]:focus {
+  border-color: #ff7f50;
+}
+
+.user-settings button {
+  background: #ff7f50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-settings button:disabled {
+  background: #ffb199;
+  cursor: not-allowed;
+}
