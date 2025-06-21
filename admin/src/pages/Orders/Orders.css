@@ -1,0 +1,185 @@
+/* Заголовок и фильтр */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hide-delivered-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.hide-delivered-label input {
+    accent-color: #FFF0ED;
+}
+
+.hide-delivered-label input.checked {
+    accent-color: #FFF0ED;
+}
+
+/* Контейнер для горизонтального скролла */
+.order-list-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+/* Список заказов */
+.order-list {
+    min-width: 850px; /* Минимальная ширина для корректного отображения на малых экранах */
+}
+
+/* Карточка заказа */
+.order-item {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+    align-items: start;
+    gap: 30px;
+    border: 1px solid tomato;
+    padding: 20px;
+    margin: 30px 0px;
+    font-size: 14px;
+    color: #505050;
+    border-radius: 6px;
+}
+
+.order-item-icon {
+    width: 50px;
+    height: auto;
+}
+
+.order-item-details {
+    /* Стили для блока с деталями заказа */
+}
+
+.order-item-food, .order-item-name {
+    font-weight: 600;
+}
+
+.order-item-name {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.order-item-address {
+    margin-bottom: 10px;
+}
+
+.order-item-phone {
+    /* Стили для телефона */
+}
+
+.order-item-date {
+    /* Стили для даты */
+}
+
+.order-item-amount {
+    font-weight: 500;
+}
+
+.order-item-status {
+    background-color: #ffe8e4;
+    border: 1px solid #ff6347;
+    width: max(10vw, 120px);
+    padding: 10px;
+    outline: none;
+    border-radius: 4px;
+}
+
+.order-item.delivered {
+    border: 1px solid #57F057;
+}
+
+.order-item.delivered .order-item-status {
+    background-color: #eaffea;
+    border: 1px solid #57F057;
+}
+
+/* Адаптация для экранов шириной до 1000px */
+@media (max-width: 1000px) {
+    .order-item {
+        font-size: 12px;
+        grid-template-columns: 0.5fr 2fr 1fr;
+        grid-template-areas: 
+            "icon details status"
+            "date amount .";
+        padding: 15px 12px;
+        gap: 15px;
+    }
+    
+    .order-item-icon {
+        grid-area: icon;
+        width: 40px;
+    }
+    
+    .order-item-details {
+        grid-area: details;
+    }
+    
+    .order-item-date {
+        grid-area: date;
+    }
+    
+    .order-item-amount {
+        grid-area: amount;
+    }
+    
+    .order-item-status {
+        grid-area: status;
+        padding: 5px;
+        font-size: 12px;
+    }
+}
+
+/* Адаптация для экранов шириной до 768px */
+@media (max-width: 768px) {
+    .order-list {
+        min-width: 100%; /* Полная ширина для мобильных устройств */
+    }
+    
+    .order-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "details"
+            "date"
+            "amount"
+            "status";
+        gap: 12px;
+    }
+    
+    .order-item-icon {
+        display: none; /* Скрываем иконку на мобильных устройствах */
+    }
+    
+    .order-item-name {
+        margin-top: 10px;
+    }
+    
+    .order-item-status {
+        width: 100%;
+        justify-self: start;
+    }
+}
+
+/* Адаптация для экранов шириной до 480px */
+@media (max-width: 480px) {
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .order-item {
+        padding: 12px 8px;
+        font-size: 11px;
+        margin: 20px 0px;
+    }
+    
+    .order-item-status {
+        font-size: 11px;
+        padding: 6px;
+    }
+}
